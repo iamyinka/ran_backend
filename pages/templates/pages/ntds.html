@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+NTDs
+
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <!-- Blog details breadcrumb start -->
+        <div class="wrapper-box p-relative">
+            <div class="breadcrumb-bg" data-background="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754700/website/assets/img/breadcrumb/breadcrumb-bg_bwimw6.png"></div>
+            <div class="breadcrumb-area pt-265 pb-265">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb__content text-center">
+                                <h1 class="breadcrumb__title">NEGLECTED TROPICAL DISEASES (NTDS)</h1>
+                                <!-- <div class="breadcrumb__list">
+                                    <span class="underline"><a href="tuberculosis.html">Tuberculosis</a></span>
+                                    <span class="dvdr"><i class="fa-solid fa-colon"></i></span>
+                                    <span class="underline"><a href="buruli-ulcer.html">Buruli Ulcer</a></span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog details breadcrumb end -->
+
+        <!-- Blog details area start -->
+        <div class="blog-details-area pt-100 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="blog-details-items">
+                            <div class="blog-details-thumb">
+                                <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754785/website/assets/img/ntds/20201007_140455_ohm8ri.jpg" loading="lazy" alt="" />
+                            </div>
+
+                            <div class="blog-details-content">
+                                <!-- <h3 class="blog-details-title">
+                                    BURULI ULCER
+                                </h3> -->
+                                <p>
+                                    Worldwide, more than 1.7 billion people are affected or threatened by neglected
+                                    tropical disease (NTD), many millions
+                                    die from the consequences every year. The World Health Organization WHO currently
+                                    counts 20 diseases in the group of
+                                    NTDs, which, if left untreated, lead to chronic complaints, disabilities or even
+                                    death.
+
+                                </p>
+                                <p>
+                                    All NTDs have in common that they receive almost no attention from the general
+                                    public, from (applied) research, from
+                                    government institutions and (pharmaceutical) companies, because they play little or
+                                    no role in the affluent countries of
+                                    the Global North.
+                                </p>
+                                <p>
+                                    NTDs mainly affect people in countries in the Global South, which is why they are
+                                    also referred to as "diseases of
+                                    poverty". They are widespread where people have no access to clean water, sanitary
+                                    facilities and hygiene knowledge and
+                                    materials (WASH) and where there is a lack of medical care.
+                                </p>
+                                <p>
+                                    There is still no good and effective therapy for many of these diseases, but if
+                                    medication is available, it often has
+                                    terrible side effects. Likewise, many of them do not know how they are transmitted.
+                                    There is a lack of funds for
+                                    research.
+                                </p>
+                                <p>
+                                    All of this and more play a role in why the risk of impoverishment is so great for
+                                    those affected: dwindling
+                                    performance, high treatment costs, side effects, exclusion and stigmatization. In
+                                    many countries, those affected are
+                                    also discriminated against by law.
+                                </p>
+                                <p>
+                                    RedAid Nigeria wants to break this vicious circle of poverty and disease in its
+                                    States of operation with holistic,
+                                    cross-sectoral approaches!
+                                </p>
+                            </div>
+
+                            <div class="blog-details-content">
+                                <h3 class="details-title">REDAID NIGERIA IS CURRENTLY FIGHTING THESE NTDS</h3>
+                                <h4>Leprosy <a href="{% url 'hansen_disease' %}" class="btn-link" target="
+                                    ">Read More &raquo;</a></h4>
+                                <h4>Buruli Ulcer <a href="{% url 'buruli_ulcer' %}" class="btn-link" target="
+                                                                    ">Read More &raquo;</a></h4>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog details area end -->
+
+
+        <!-- blog area start -->
+        <section class="tpblog-area pb-10 pt-10">
+            <div class="container">
+                <!-- <div class="row">
+                  <div class="col-xl-12">
+                    <div class="tpblog">
+                      <div class="section-title-wrapper">
+                        <span class="section-sub-title has-before has-after text-center"> Blog </span>
+                        <h3 class="section-title text-center">Check latest blog post</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="row tp-gx-40">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="tpblog mt-30 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="tpblog__thumb">
+                                <a href="{% url 'tuberculosis' %}"><img class="grayscale" src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754846/website/assets/img/blog/blog-7_dnyvse.png" loading="lazy"
+                                        alt="" /></a>
+                                <a href="{% url 'tuberculosis' %}"><span>Tuberculosis</span></a>
+                            </div>
+                            <div class="tpblog__content">
+                                <h3 class="tpblog__title"><a href="{% url 'tuberculosis' %}">Why you should join as a volunteer
+                                        with us
+                                        -
+                                        2022</a></h3>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered
+                                    alteration in some form</p>
+                                <!-- <div class="tpblog__details d-flex justify-content-md-between align-items-center flex-wrap">
+                          <div class="tpblog__author">
+                            <img src="assets/img/blog/blog-auther.png" alt="" />
+                            <span>Rasalina Halim</span>
+                          </div>
+                          <div class="tpblog__comments align-items-center">
+                            <span>356<i class="fa-regular fa-heart"></i></span>
+                            <span>12.January.2022<i class="fa-regular fa-clock"></i></span>
+                          </div>
+                        </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="tpblog mt-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="tpblog__thumb">
+                                <a href="ntds.html"><img class="grayscale" src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754846/website/assets/img/blog/blog-7_dnyvse.png"
+                                        alt="" /></a>
+                                <a href="{% url 'ntds' %}"><span>Neglected Tropical Diseases (NTDs)</span></a>
+                            </div>
+                            <div class="tpblog__content">
+                                <h3 class="tpblog__title"><a href="{% url 'ntds' %}">Take Your Online Donation to the Next
+                                        Level!</a>
+                                </h3>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered
+                                    alteration in some form</p>
+                                <!-- <div class="tpblog__details d-flex justify-content-md-between align-items-center flex-wrap">
+                          <div class="tpblog__author">
+                            <img src="assets/img/blog/blog-auther-2.jpg" alt="" />
+                            <span>Hallen Alinar</span>
+                          </div>
+                          <div class="tpblog__comments align-items-center">
+                            <span>356<i class="fa-regular fa-heart"></i></span>
+                            <span>12.January.2022<i class="fa-regular fa-clock"></i></span>
+                          </div>
+                        </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog area end -->
+    </main>
+
+{% endblock content %}
