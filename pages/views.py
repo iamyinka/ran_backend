@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Partner, Network
+from .forms import ContactForm
 
 def index(request):
     return render(request, "pages/index.html")
@@ -55,5 +57,19 @@ def past_projects(request):
 def publications(request):
     return render(request, "pages/publications.html")
 
-# def buruli_ulcer(request):
-#     return render(request, "pages/buruli-ulcer.html")
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact_form = form.save(commit=False)
+            contact_form.save()
+            messages.success(request, "Thank you for your message. We will get back to you as soon as we can.")
+            return redirect('contact_us')
+    else:
+        form = ContactForm()
+
+    context = {
+        "form": form
+    }
+
+    return render(request, "pages/contact.html", context)

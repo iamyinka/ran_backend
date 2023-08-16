@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # Third-party Apps
     "debug_toolbar",
+    'widget_tweaks',
 
     # Local Apps
     "pages",

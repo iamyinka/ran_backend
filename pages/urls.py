@@ -18,4 +18,5 @@ urlpatterns = [
     path('ongoing-projects/', views.ongoing_projects, name='ongoing_projects'),
     path('past-projects/', views.past_projects, name='past_projects'),
     path('publications/', views.publications, name='publications'),
+    path('contact-us/', views.contact_us, name='contact_us'),
 ]

@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691754692/website/assets/css/nice-select_x18dh6.css" />
   <link rel="stylesheet" href="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691919326/website/assets/css/font-awesome-pro_qdk6rq.css" />
   <link rel="stylesheet" href="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691754694/website/assets/css/spacing_xbvh6s.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
   {% block head %}{% endblock head %}
 </head>
@@ -153,7 +154,7 @@
                     <a href="#">Blog</a>
                   </li>
                   <li>
-                    <a href="contact-us.html">Contact Us</a>
+                    <a href="{% url 'contact_us' %}">Contact Us</a>
                   </li>
                 </ul>
               </nav>
@@ -240,6 +241,8 @@
     <div class="offcanvas-overlay"></div>
   </div>
   <!-- mobile menu style end -->
+
+  
 
   {% block content %}
   
@@ -332,10 +335,13 @@
 
 
                 <div class="text-start text-md-end social-icons">
-                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com/redaidnigeria?mibextid=ZbWKwL" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/redaidnigeria?t=TKAYRC1euWxmS1h74MKFVQ&s=09"
+                  target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://instagram.com/redaidnigeria?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+                  <a href="https://youtube.com/@redaidnigeria" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="https://www.linkedin.com/company/redaid-nigeria/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -384,7 +390,15 @@
   <script src="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691754716/website/assets/js/imagesloaded-pkgd_lvwmvh.js"></script>
   <script src="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691754715/website/assets/js/ajax-form_gzcntj.js"></script>
   <script src="https://res.cloudinary.com/dav4wpgc9/raw/upload/v1691754716/website/assets/js/backtotop_fx6hcb.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="{% static 'assets/js/main.js' %}"></script>
+  <script>
+    {% if messages %}
+      {% for message in messages %}
+          toastr.{{ message.tags }}("{{ message }}");
+      {% endfor %} 
+    {% endif %}
+  </script>
 </body>
 
 </html>
