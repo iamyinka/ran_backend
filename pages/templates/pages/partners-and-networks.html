@@ -99,8 +99,22 @@ Partners &amp; Networks
                             <div class="blog-details-content blog-details-no-secret">
                                 <h3 class="details-title">Partners:</h3>
                                 <ul id="partners">
-                                    <li><span><i class="fas fa-check"></i></span>Association for Reproductive and Family
-                                        Health (ARFH)</li>
+                                    
+                                    {% if partners %}
+                                        {% for partner in partners %}
+                                        <li>
+                                            <a href="{% if partner.url %} {{ partner.url }} {% else %} # {% endif %}" target="_blank">
+                                                <span>
+                                                    <i class="fas fa-check"></i>
+                                                </span>{{ partner.name }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    {% else %}
+                                        No partner(s) in the database
+                                    {% endif %}
+
+                                    {% comment %} Association for Reproductive and Family Health (ARFH)
+
                                     <li><span><i class="fas fa-check"></i></span>Institute for Human Virology Nigeria
                                         (IHVN)</li>
                                     <li><span><i class="fas fa-check"></i></span>Family Health International (FHI 360)
@@ -145,12 +159,9 @@ Partners &amp; Networks
 
                                     <li><span><i class="fas fa-check"></i></span>Purple Hope Initiative Nigeria</li>
 
-                                    <!-- <li><span><i class="fas fa-check"></i></span>Christian Health Association of Nigeria
-                                        (CHAN)</li> -->
-
                                     <li><span><i class="fas fa-check"></i></span>Kindermissionwork</li>
 
-                                    <li><span><i class="fas fa-check"></i></span>Effect Hope Canada</li>
+                                    <li><span><i class="fas fa-check"></i></span>Effect Hope Canada</li> {% endcomment %}
                                     <!-- <li><span><i class="fas fa-check"></i></span>Nam nec mi euismod euismod</li> -->
                                 </ul>
                             </div>
@@ -184,7 +195,20 @@ Partners &amp; Networks
                                 </p>
 
                                 <ul id="networks">
-                                    <li><span><i class="fas fa-check"></i></span>International Anti-Leprosy Association
+
+                                    {% if networks %}
+                                        {% for network in networks %}
+                                        <li>
+                                            <a href="{% if network.url %} {{ network.url }} {% else %} # {% endif %}" target="_blank">
+                                                <span>
+                                                    <i class="fas fa-check"></i>
+                                                </span>{{ network.name }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    {% else %}
+                                    No network(s) in the database
+                                    {% endif %}
+                                    {% comment %} <li><span><i class="fas fa-check"></i></span>International Anti-Leprosy Association
                                         (ILEP)</li>
                                     <li><span><i class="fas fa-check"></i></span> Association of Public Health Physician
                                         of Nigeria (APHPN)
@@ -196,7 +220,7 @@ Partners &amp; Networks
                                     <li><span><i class="fas fa-check"></i></span>Nigerian Association of Plastic
                                         Reconstructive and Aesthetic Surgeons (NAPRAS)</li>
                                     <li><span><i class="fas fa-check"></i></span>Association of Psychiatrists in Nigeria
-                                        (APN)</li>
+                                        (APN)</li> {% endcomment %}
                                 </ul>
                             </div>
 

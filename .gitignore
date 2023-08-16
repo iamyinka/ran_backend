@@ -2,3 +2,5 @@ db.sqlite3
 Pipfile
 Pipfile.lock
 .env
+**/migrations/*
+!**migrations/__init__.py
