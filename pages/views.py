@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Partner, Network
 
 def index(request):
     return render(request, "pages/index.html")
@@ -16,7 +17,13 @@ def article_of_association(request):
     return render(request, "pages/article-of-association.html")
 
 def partners_and_networks(request):
-    return render(request, "pages/partners-and-networks.html")
+    partners = Partner.objects.all()
+    networks = Network.objects.all()
+    context = {
+        'partners': partners,
+        "networks": networks
+    }
+    return render(request, "pages/partners-and-networks.html", context)
 
 def states_of_operations(request):
     return render(request, "pages/states-of-operations.html")

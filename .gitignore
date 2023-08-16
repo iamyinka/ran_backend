@@ -4,3 +4,5 @@ Pipfile.lock
 .env
 static/admin/
 static/debug_toolbar/
+**/migrations/*
+!**migrations/__init__.py
