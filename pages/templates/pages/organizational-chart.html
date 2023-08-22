@@ -405,7 +405,13 @@ Organizational Chart
     }
 
     .org-chart .board:before {
-        height: 245px;
+        height: 270px;
+        {% comment %} height: 245px; {% endcomment %}
+    }
+
+    .department .lvl-b {
+        min-height: 85px;
+        padding-bottom: 0;
     }
 </style>
 
@@ -515,7 +521,7 @@ Organizational Chart
                                 <strong>Programs
                                     Department</strong>
                             </span>
-                            <ul class="sections">
+                            {% comment %} <ul class="sections">
                                 <li class="section"> <span>
                                         <strong>Fundraising
                                             &amp; Communications</strong>
@@ -539,13 +545,11 @@ Organizational Chart
 
                                     </span>
                                 </li>
-                            </ul>
+                            </ul> {% endcomment %}
                         </li>
                         <li class="department ">
                             <span class="lvl-b">
-                                <strong>Fundraising
-                                    &amp; Comms.
-                                    Department</strong>
+                                <strong>Communications &amp; Fundraising Department</strong>
 
                             </span>
                             <ul class="sections">
@@ -585,7 +589,7 @@ Organizational Chart
                                 <strong>Finance &amp; Compliance Department</strong>
 
                             </span>
-                            <ul class="sections">
+                            {% comment %} <ul class="sections">
                                 <li class="section"> <span>
                                         <strong>Finance & HR
                                             Manager </strong>
@@ -609,17 +613,15 @@ Organizational Chart
 
                                     </span>
                                 </li>
-                            </ul>
+                            </ul> {% endcomment %}
                         </li>
                         <li class="department ">
                             <span class="lvl-b">
-                                <strong>Admin/
-                                    HR
-                                    Department
+                                <strong> Administration &amp; Human Resources Department
                                 </strong>
 
                             </span>
-                            <ul class="sections">
+                            {% comment %} <ul class="sections">
                                 <li class="section"> <span>
                                         <strong>Chartered
                                             Accountant</strong>
@@ -632,16 +634,14 @@ Organizational Chart
                                     </span>
                                 </li>
 
-                            </ul>
+                            </ul> {% endcomment %}
                         </li>
                         <li class="department ">
                             <span class="lvl-b">
-                                <strong>Logistics/
-                                    ICT
-                                    Department</strong>
+                                <strong>Procurement &amp; Logistics Department</strong>
 
                             </span>
-                            <ul class="sections">
+                            {% comment %} <ul class="sections">
                                 <li class="section"> <span>
                                         <strong>Workers</strong>
 
@@ -653,7 +653,7 @@ Organizational Chart
                                     </span>
                                 </li>
 
-                            </ul>
+                            </ul> {% endcomment %}
                         </li>
 
                     </ul>
