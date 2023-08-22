@@ -61,9 +61,10 @@ def management_team(request):
     return render(request, "pages/management-team.html")
 
 def donation(request):
-
     if request.method == "POST":
-        print(request.POST)
+        # print(request.POST)
+        messages.success(request, "Payment successful! Thank you for your support.")
+        return redirect('vision_and_mission')
 
     return render(request, "pages/donation.html")
 

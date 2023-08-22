@@ -97,11 +97,15 @@
                 // see catch below
                 throw data;
                 }
-                someSuccessFunction(data);
+                // someSuccessFunction(data);
+                window.setTimeout(function () {
+                    window.location.href = "{% url 'vision_and_mission' %}";
+                }, 2000)
+                // window.location.href = "{% url 'contact_us' %}"
             })
             // catch any error in the network call.
             .catch(error => {
-                someErrorFunction(error);
+                console.log(error)
             });
         },
       });
