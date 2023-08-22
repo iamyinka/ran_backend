@@ -19,5 +19,6 @@ urlpatterns = [
     path('past-projects/', views.past_projects, name='past_projects'),
     path('publications/', views.publications, name='publications'),
     path('management/', views.management_team, name='management_team'),
+    path('donate/', views.donation, name='donation'),
     path('contact-us/', views.contact_us, name='contact_us'),
 ]

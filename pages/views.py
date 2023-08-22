@@ -60,6 +60,13 @@ def publications(request):
 def management_team(request):
     return render(request, "pages/management-team.html")
 
+def donation(request):
+
+    if request.method == "POST":
+        print(request.POST)
+
+    return render(request, "pages/donation.html")
+
 def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

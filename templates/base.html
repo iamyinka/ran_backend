@@ -193,7 +193,7 @@
                   </ul>
                 </div> -->
               <div class="header-btn">
-                <a class="tp-btn tp-btn-shine-effect" href="#"><span>Donate now</span></a>
+                <a class="tp-btn tp-btn-shine-effect" href="{% url 'donation' %}"><span>Donate now</span></a>
               </div>
             </div>
             <div class="mobile-menu d-xl-none">
@@ -224,7 +224,7 @@
       <div class="tp-mobile-menu-pos"></div>
       <div class="tp-side-content">
         <div class="tp-side-content__inner-btn mb-100">
-          <a href="contact.html" class="tp-btn">Donate now</a>
+          <a href="{% url 'donation' %}" class="tp-btn">Donate now</a>
         </div>
         <div class="tp-contact-info d-flex flex-column">
           <a href="tel:+234 11223344"><i class="fa-solid fa-phone-flip"></i> +234 11223344</a>
@@ -295,7 +295,7 @@
               <div class="tpfooter-widget tp-footer-col-2">
                 <h3 class="tpfooter-widget__title">Support us</h3>
                 <ul>
-                  <li><a href="#">Donate Now</a></li>
+                  <li><a href="{% url 'donation' %}">Donate Now</a></li>
                   <!-- <li><a href="#">Store</a></li>
                     <li><a href="#">Reports</a></li>
                     <li><a href="#">Press Releases</a></li>
@@ -310,7 +310,7 @@
                   <li><a href="#">Home</a></li>
                   <li><a href="{% url 'vision_and_mission' %}">About us</a></li>
                   <li><a href="#">Contact us</a></li>
-                  <li><a href="#">Donation</a></li>
+                  <li><a href="{% url 'donation' %}">Donation</a></li>
                   <li><a href="#">Join Volunteer</a></li>
                 </ul>
               </div>
