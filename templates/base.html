@@ -286,8 +286,9 @@
                   <!-- <li><a href="#">Policy Priorities</a></li> -->
                   <li><a href="#">Careers</a></li>
                   <li><a href="#">Internships</a></li>
+                  <li><a href="#">Join Volunteer</a></li>
                   <!-- <li><a href="#">Financial Reports</a></li> -->
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -307,11 +308,10 @@
               <div class="tpfooter-widget tp-footer-col-3">
                 <h3 class="tpfooter-widget__title">Quick LInks</h3>
                 <ul>
-                  <li><a href="#">Home</a></li>
+                  <li><a href="{% url 'index' %}">Home</a></li>
                   <li><a href="{% url 'vision_and_mission' %}">About us</a></li>
-                  <li><a href="#">Contact us</a></li>
+                  <li><a href="{% url 'contact_us' %}">Contact us</a></li>
                   <li><a href="{% url 'donation' %}">Donation</a></li>
-                  <li><a href="#">Join Volunteer</a></li>
                 </ul>
               </div>
             </div>
