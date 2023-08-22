@@ -1,4 +1,17 @@
-{% extends 'base.html' %} {% block title %} Make a Donation {% endblock title %} {% block content %}
+{% extends 'base.html' %} 
+{% block title %} Make a Donation {% endblock title %} 
+{% block head %}
+
+<style>
+    .donation-details img {
+        width: 850px;
+        height: 439px;
+        object-fit: cover;
+    }
+</style>
+
+{% endblock head %}
+{% block content %}
 <!-- mobile menu style end -->
 <main>
   <!-- donation details breadcrumb start -->
@@ -29,10 +42,89 @@
   <div class="donation-details-area pt-100 pb-90">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 mx-auto">
+        <div class="col-lg-8">
+            <div class="donation-details-item">
+               <div class="donation-card-box donaion-details">
+                  <div class="card-item">
+                     <div class="tpcard__wrapper donation-details">
+                        <div class="tpcard__thumb donation-details">
+                           <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1692700647/website/assets/img/donation/donate_t84nbz.jpg" alt="">
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+               <div class="donation-notice d-flex align-items-center">
+                  
+                  <span class="notice">RedAid Nigeria provides essential medical and humanitarian assistance to vulnerable families, most especially in hard-to-reach communities in Nigeria. Our work is made possible through the support of individuals like you. Please consider supporting us and sharing our cause with your friends. Together, we can make a difference in the lives of those in need.</span>
+                  {% comment %} <p>
+                     Test mode is enabled. While in test mode no
+                     live donations are
+                     processed.
+                  </p> {% endcomment %}
+               </div>
+               <div class="row">
+                  <div class="col-xl-4">
+                     <div class="donation-payment align-items-center mb-30">
+                        <h3 class="donation-payment-title">Select Payment Method </h3>
+                     </div>
+                  </div>
+                  <div class="col-xl-8">
+                     <div class="donation-payment-check d-sm-flex justify-content-xxl-end mb-30">
+                        <div class="form-check">
+                           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                              value="option1" checked>
+                           <label class="form-check-label" for="exampleRadios1">
+                              Give Once
+                           </label>
+                        </div>
+                        <div class="form-check ml-30">
+                           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                              value="option1" checked>
+                           <label class="form-check-label" for="exampleRadios2">
+                              Give Monthly
+                           </label>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                <div class="col-lg-12">
+                    <div class="right-padding pl-25">
+                      <div class="sidebar__widget-contact">
+                        <h3 class="sidebar__widget-title donation-details contact">Make a Donation</h3>
+                        <form action="" id="paymentForm">
+                          {% csrf_token %}
+                          <input type="text" placeholder="Enter name*" name="sender" id="sender" />
+                          <input type="email" placeholder="Enter your e-mail*" name="email" id="email" />
+                          <input type="hidden" name="ref" value="123456789011" id="ref" />
+                          <input type="number" placeholder="Amount (min. amount = NGN 500)*" name="amount" id="amount" min="500" />
+                          <div class="sidebar-btn">
+                            <button class="tp-btn tp-btn-shine-effect" onclick="payWithPaystack()">Donate Now</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="donation-notice d-flex align-items-center mt-30">
+                  
+                    <span class="notice">Join RedAid Nigeria in the effort to eradicate life-threatening diseases that are impacting vulnerable communities.
+                        <br><br>
+                        Neglected Tropical Diseases disproportionately impact vulnerable groups, particularly women and children, leading to significant consequences.
+                        </span>
+                 </div>
+                  
+               </div>
+               
+               
+            </div>
+         </div>
+         
+        <div class="col-lg-4">
           <div class="right-padding pl-25">
             <div class="sidebar__widget-contact">
-              <h3 class="sidebar__widget-title donation-details contact">Make a Donation</h3>
+              {% comment %} <h3 class="sidebar__widget-title donation-details contact">Make a Donation</h3>
               <form action="" id="paymentForm">
                 {% csrf_token %}
                 <input type="text" placeholder="Enter name*" name="sender" id="sender" />
@@ -42,7 +134,81 @@
                 <div class="sidebar-btn">
                   <button class="tp-btn tp-btn-shine-effect" onclick="payWithPaystack()">Donate Now</button>
                 </div>
-              </form>
+              </form> {% endcomment %}
+              <p><strong>Want to support us by making a direct transfer to our bank account?</strong></p>
+
+              <p><strong>Domestic Payments ( NGN ₦ )</strong></p>
+
+              <p>
+                <ul>
+                    <li>
+                        Bank Name: <br>
+                        <strong>
+                            Access Bank
+                        </strong>
+                    </li>
+                    <li>
+                        Account Name
+                        <br>
+                        <strong>
+                            RedAid Nigeria Donations
+                        </strong>
+                    </li>
+                    <li>
+                        Account Number
+                        <br>
+                        <strong>
+                            1396337804
+                        </strong>
+                    </li>
+                </ul>
+              </p>
+
+              <p><strong>International Payments ( USD $)</strong></p>
+
+              <p>
+                <ul>
+                    <li>
+                        Bank Name: <br>
+                        <strong>
+                            Access Bank
+                        </strong>
+                    </li>
+                    <li>
+                        Account Name
+                        <br>
+                        <strong>
+                            RedAid Nigeria Donations
+                        </strong>
+                    </li>
+                    <li>
+                        Account Number
+                        <br>
+                        <strong>
+                            1396340383
+                        </strong>
+                    </li>
+                    <hr>
+                    <span class="notice">
+                        If you are donating from outside Nigeria, you will need the information below:
+                    </span>
+                    <li>
+                        Swift Code
+                        <br>
+                        <strong>
+                            ABNGNGLA
+                        </strong>
+                    </li>
+                    <li>
+                        Bank Address
+                        <br>
+                        <strong>
+                            No. 67 Ogui road, Enugu
+                        </strong>
+                    </li>
+                </ul>
+              </p>
+
             </div>
           </div>
         </div>
