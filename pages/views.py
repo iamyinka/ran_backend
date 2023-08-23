@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Partner, Network
+from .models import Partner, Network, Donation
 from .forms import ContactForm
 
 def index(request):
@@ -62,7 +62,29 @@ def management_team(request):
 
 def donation(request):
     if request.method == "POST":
-        # print(request.POST)
+        print(request.POST)
+        sender = request.POST.get('sender')
+        email = request.POST.get('email')
+        ref = request.POST.get('ref')
+        amount = int(request.POST.get('amount'))
+        cause = request.POST.get('cause')
+        status = request.POST.get('status')
+        message = request.POST.get('message')
+        frequency = request.POST.get('frequency')
+        tx_ref = request.POST.get('tx_ref')
+
+        Donation.objects.create(
+            sender = sender,
+            email = email,
+            ref = ref,
+            amount = amount,
+            cause = cause.title(),
+            status = status.title(),
+            message = message,
+            frequency = frequency.title(),
+            tx_ref = tx_ref
+        )
+
         messages.success(request, "Payment successful! Thank you for your support.")
         return redirect('vision_and_mission')
 
