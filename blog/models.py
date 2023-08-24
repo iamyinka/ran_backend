@@ -1,3 +1,4 @@
+import uuid
 from django.urls import reverse
 from django.db import models
 from django.db.models.query import QuerySet
@@ -16,6 +17,7 @@ class Post(models.Model):
         DRAFT = "DF", "Draft"
         PUBLISHED = 'PB', "Published"
 
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date="publish")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
