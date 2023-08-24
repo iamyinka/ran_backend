@@ -21,7 +21,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     body = RichTextField()
     publish = models.DateTimeField(default=timezone.now)
-    banner = models.ImageField(upload_to='blog/', blank=True, null=True)
+    banner = models.ImageField(upload_to='blog/')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT)
