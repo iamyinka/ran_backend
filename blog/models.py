@@ -4,7 +4,6 @@ from django.db import models
 from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
 
 
 class PublishManager(models.Manager):
@@ -21,7 +20,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date="publish")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    body = RichTextField()
+    body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     banner = models.ImageField(upload_to='blog/')
     created = models.DateTimeField(auto_now_add=True)

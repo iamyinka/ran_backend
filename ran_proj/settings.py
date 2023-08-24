@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'cloudinary',
     "debug_toolbar",
     'widget_tweaks',
-    "ckeditor",
-    "ckeditor_uploader",
 
     # Local Apps
     "pages",
@@ -161,8 +159,6 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 STATIC_URL = '/static/'
 
 MEDIA_URL = "/media/"
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
