@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{{ post.title }}
+
+{% endblock title %}
+
+{% block content %}
+
+<main>
+    <!-- Blog details breadcrumb start -->
+    <div class="wrapper-box p-relative">
+       <div class="breadcrumb-bg" data-background="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754700/website/assets/img/breadcrumb/breadcrumb-bg_bwimw6.png"></div>
+       <div class="breadcrumb-area pt-265 pb-265">
+          <div class="container">
+             <div class="row">
+                <div class="col-xl-12">
+                   <div class="breadcrumb__content text-center">
+                      <h1 class="breadcrumb__title">{{ post.title }}</h1>
+                      <div class="breadcrumb__list">
+                         <span class="underline"><a href="{% url 'blog:posts' %}">&laquo; Back to Articles</a></span>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- Blog details breadcrumb end -->
+
+    <!-- Blog details area start -->
+    <div class="blog-details-area pt-100 pb-130">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-8">
+                <div class="blog-details-items">
+                   <div class="blog-details-thumb">
+                      <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754923/website/assets/img/blog/blog-details/blog-thumb_eo44zi.png" alt="">
+                   </div>
+                   <div class="blog-details-info d-flex">
+                      <div class="blog-details-name">
+                         <i class="fa-regular fa-circle-user"></i>
+                         <span>{{ post.author }}</span>
+                      </div>
+                      <div class="blog-details-date">
+                         <i class="fa-regular fa-clock"></i>
+                         <span>{{ post.publish }}</span>
+                      </div>
+                      {% comment %} <div class="blog-details-message">
+                         <i class="fa-regular fa-message-lines"></i>
+                         <span>(04) Coments</span>
+                      </div> {% endcomment %}
+                   </div>
+                   <div class="blog-details-content">
+                      <h3 class="blog-details-title">{{ post.title }}</h3>
+                   </div>
+                   <div class="blog-details-content">
+                      {{ post.body|safe }}
+                   </div>
+                   {% comment %} <div class="row">
+                      <div class="col-md-6">
+                         <div class="blog-details-content-thumb mt-20">
+                            <img src="assets/img/blog/blog-details/blog-thumb-3.jpg" alt="">
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="blog-details-content-thumb mt-20">
+                            <img src="assets/img/blog/blog-details/blog-thumn-4.jpg" alt="">
+                         </div>
+                      </div>
+                   </div> {% endcomment %}
+                   {% comment %} <div class="tag-box">
+                      <div class="row align-items-center">
+                         <div class="col-md-7">
+                            <div class="tagcloud">
+                               <span>Tag</span>
+                               <a href="donation-listing.html">Business</a>
+                               <a href="donation-listing.html">Design</a>
+                               <a href="donation-listing.html">apps</a>
+                               <a href="donation-listing.html">data</a>
+                            </div>
+                         </div>
+                         <div class="col-md-5">
+                            <div class="postbox__share text-md-end">
+                               <span>Share</span>
+                               <a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                               <a class="pinterest" href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                               <a class="facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                               <a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                         </div>
+                      </div>
+                   </div> {% endcomment %}
+                   {% comment %} <div class="row align-items-center">
+                      <div class="col-md-6">
+                         <div class="postbox__more-left mt-35 d-none d-md-block">
+                            <div class="postbox__more-icon">
+                               <h4><a href="blog-details.html"><i class="fa-regular fa-angles-left"></i> Previous
+                                     Post</a></h4>
+                            </div>
+                            <div class="postbox__more-content d-flex align-items-center">
+                               <a href="blog-details.html"><img src="assets/img/blog/blog-details/post1.jpg" alt=""></a>
+                               <span><a href="blog-details.html">Digital Marketing Agency <br> Pricing Guide.</a></span>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-6">
+                         <div class="postbox__more-right mt-35 d-none d-md-block">
+                            <div class="postbox__more-icon text-md-end">
+                               <h4> <a href="blog-details.html">Next Post <i
+                                        class="fa-regular fa-angles-right"></i></a></h4>
+                            </div>
+                            <div class="postbox__more-content d-flex align-items-center justify-content-md-end">
+                               <span class="text-end"><a href="blog-deatails.html">App Prototyping <br> Types, Example & Usages.</a></span>
+                               <a href="blog-details.html"><img src="assets/img/blog/blog-details/post2.jpg" alt=""></a>
+                            </div>
+                         </div>
+                      </div>
+                   </div> {% endcomment %}
+                   {% comment %} <div class="postbox__comment-wrapper p-relative">
+                      <div class="postbox__comment">
+                         <h3 class="postbox__comment-title">(04) Comment</h3>
+                         <ul>
+                            <li>
+                               <div class="postbox__comment-box p-relative">
+                                  <div class="postbox__comment-avater d-flex align-items-start">
+                                     <img src="assets/img/blog/blog-details/avater1.jpg" alt="">
+                                     <div class="postbox__comment-text">
+                                        <div class="postbox__comment-name">
+                                           <h3>Kristin Watson</h3>
+                                           <span class="post-meta">MARCH 10, 2022</span>
+                                           <div class="postbox__comment-reply">
+                                              <a href="#"></a>
+                                           </div>
+                                           <p>Patient Comments are a collection of comments submitted by viewers in
+                                              response to <br> a question posed by a MedicineNet doctor.</p>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                         </ul>
+                         <ul class="children">
+                            <li>
+                               <div class="postbox__comment-box p-relative">
+                                  <div class="postbox__comment-avater d-flex align-items-start">
+                                     <img src="assets/img/blog/blog-details/avater2.jpg" alt="">
+                                     <div class="postbox__comment-text">
+                                        <div class="postbox__comment-name">
+                                           <h3>Brooklyn Simmons</h3>
+                                           <span class="post-meta">MARCH 10, 2022</span>
+                                           <div class="postbox__comment-reply">
+                                              <a href="#"></a>
+                                           </div>
+                                           <p>Include anecdotal examples of your experience, or things you took notice
+                                              of that you <br> feel others would find useful.</p>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div> {% endcomment %}
+                   {% comment %} <div class="postbox-form">
+                      <div class="row">
+                         <div class="col-lg-12">
+                            <div class="postbox-form-box">
+                               <div class="post-form">
+                                  <form action="#">
+                                     <div class="row">
+                                        <h3 class="post-form-title">Leave a Reply</h3>
+                                        <p>Your email address will not be published. Required fields are marked *</p>
+                                        <div class="col-xl-6 col-lg-6">
+                                           <div class="contact-input">
+                                              <input class="input" type="text" placeholder="Enter your Name">
+                                           </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                           <div class="contact-input">
+                                              <input class="input" type="email" placeholder="Enter your mail">
+                                           </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                           <div class="contact-input">
+                                              <input class="input" type="text" placeholder="Enter your number">
+                                           </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                           <div class="contact-input">
+                                              <input class="input" type="text" placeholder="Enter your website">
+                                           </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                           <div class="contact-input">
+                                              <textarea class="textarea" placeholder="Type your comment"></textarea>
+                                           </div>
+                                           <div class="row">
+                                              <div class="col-12">
+                                                 <div class="post-form-btn">
+                                                    <button type="submit" class="tp-btn tp-btn-shine-effect">Submit Comment</button>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </form>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div> {% endcomment %}
+                </div>
+             </div>
+             <div class="col-lg-4">
+                <div class="blog-left-box  pl-20">
+                   <div class="blog-details__search-box mb-40">
+                      <h3>Search Here</h3>
+                      <div class="search-form p-relative">
+                         <form action="#">
+                            <input type="text" placeholder="search here">
+                            <button><i class="far fa-search"></i></button>
+                         </form>
+                      </div>
+                   </div>
+                   {% comment %} <div class="sidebar__widget mb-40">
+                      <h3 class="sidebar__widget-title">Categories</h3>
+                      <div class="sidebar__widget-content">
+                         <ul>
+                            <li><a href="donation-listing.html">Education <span>03</span></a></li>
+                            <li><a href="donation-listing.html">Hetalth care <span>07</span></a></li>
+                            <li><a href="donation-listing.html">Food and water <span>09</span></a></li>
+                            <li><a href="donation-listing.html">Chemistry <span>01</span></a></li>
+                            <li><a href="donation-listing.html">UI/UX Deisgn <span>00</span></a></li>
+                            <li><a href="donation-listing.html">Gemological <span>26</span></a></li>
+                         </ul>
+                      </div>
+                   </div> {% endcomment %}
+                   {% comment %} <div class="sidebar__widget sidebar-pages mb-40">
+                      <h3 class="sidebar__widget-title">Pages</h3>
+                      <div class="sidebar__widget-content">
+                         <ul>
+                            <li><a href="donation-listing.html">Web Design <i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                            <li><a href="donation-listing.html">Branding Design<i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                            <li><a href="donation-listing.html">Photography <i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                            <li><a href="donation-listing.html">Business Statergy <i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                            <li><a href="donation-listing.html">UI/UX Deisgn <i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                            <li><a href="donation-listing.html">Web Development<i
+                                     class="fa-regular fa-angle-right"></i></a></li>
+                         </ul>
+                      </div>
+                   </div> {% endcomment %}
+                   <div class="sidebar__widget mb-40">
+                      <h3 class="sidebar__widget-title">Recent Post</h3>
+                      <div class="sidebar__widget-content">
+                         {% if recent_posts %}
+
+                            {% for post in recent_posts %}
+                                <div class="sidebar__post">
+                                    <div class="rc__post ">
+                                    <div class="rc__post d-flex align-items-center">
+                                        <div class="rc__post-thumb">
+                                            <a href="{{ post.get_absolute_url }}"><img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754926/website/assets/img/blog/blog-details/rc-1_dajsvz.png"
+                                                alt=""></a>
+                                        </div>
+                                        <div class="rc__post-content">
+                                            <span>{{ post.publish }}</span>
+                                            <h3 class="rc__post-title">
+                                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                         
+                         {% endif %}
+                         
+                      </div>
+                   </div>
+                   {% comment %} <div class="sidebar__widget">
+                      <h3 class="sidebar__widget-title">Popular Tag</h3>
+                      <div class="sidbar__widget-content">
+                         <div class="side__tagcloud">
+                            <a href="donation-listing.html">landing </a>
+                            <a href="donation-listing.html">Charity</a>
+                            <a href="donation-listing.html">apps</a>
+                            <a href="donation-listing.html">Education </a>
+                            <a href="donation-listing.html">data</a>
+                            <a href="donation-listing.html">book</a>
+                            <a href="donation-listing.html">Design</a>
+                            <a href="donation-listing.html">website</a>
+                            <a href="donation-listing.html">landing page</a>
+                            <a href="donation-listing.html">data</a>
+                         </div>
+                      </div>
+                   </div> {% endcomment %}
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+       <!-- Blog details area end -->
+
+ </main>
+
+{% endblock content %}

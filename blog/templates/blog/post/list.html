@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% block title %}
+
+Blog
+
+{% endblock title %}
+
+{% block head %}
+
+<style>
+  .blog-details-thumb img {
+    width: 100%;
+    max-width: 843px;
+    height: 438px;
+    object-fit: cover
+  }
+
+  .rc__post-thumb img {
+    width: 100%;
+    max-width: 97px;
+    height: 78px;
+    object-fit: cover
+  }
+</style>
+
+{% endblock head %}
+
+{% block content %}
+
+
+<main>
+  <!-- News Blog details breadcrumb start -->
+  <div class="wrapper-box p-relative">
+     <div class="breadcrumb-bg" data-background="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754700/website/assets/img/breadcrumb/breadcrumb-bg_bwimw6.png"></div>
+     <div class="breadcrumb-area pt-265 pb-265">
+        <div class="container">
+           <div class="row">
+              <div class="col-xl-12">
+                 <div class="breadcrumb__content text-center">
+                    <h1 class="breadcrumb__title">Articles</h1>
+                    {% comment %} <div class="breadcrumb__list">
+                       <span><a href="index.html">Home</a></span>
+                       <span class="dvdr"><i class="fa-solid fa-colon"></i></span>
+                       <span class="underline">News</span>
+                    </div> {% endcomment %}
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <!-- News Blog details breadcrumb end -->
+
+  <!-- News Blog details area start -->
+  
+  {% if posts %}
+  
+  <div class="news-blog-details-area pt-100 pb-130">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 left">
+             {% for post in posts %}
+               <div class="blog-details-items mb-60">
+                 <div class="blog-details-thumb">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.banner.url }}" alt=""></a>
+                 </div>
+                 <div class="blog-details-info d-flex">
+                    <div class="blog-details-name news-blog">
+                       <i class="fa-regular fa-circle-user"></i>
+                       <span>{{ post.author }}</span>
+                    </div>
+                    <div class="blog-details-date news-blog">
+                       <i class="fa-regular fa-clock"></i>
+                       <span>{{ post.publish }}</span>
+                    </div>
+                    {% comment %} <div class="blog-details-message news-blog">
+                       <i class="fa-regular fa-message-lines"></i>
+                       <span>(04) Coments</span>
+                    </div> {% endcomment %}
+                 </div>
+                 <div class="blog-details-content">
+                    <h3 class="blog-details-title news-blog"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                    {{ post.body|striptags|truncatewords:30|linebreaks }} 
+                 </div>
+                 <div class="news-blog-btn">
+                    <a href="{{ post.get_absolute_url }}" class="tp-btn tp-btn-shine-effect">Read More</a>
+                 </div>
+              </div>
+             {% endfor %} 
+             
+             
+             <div class="our-portfolio-pagination">
+                <nav class="donation-pagination news-blog mt-20" aria-label="...">
+                   {% include "pagination.html" with page=posts %}
+                   {% comment %} <ul class="pagination">
+                      <li class="page-item">
+                         <a class="page-link" href="blog-details.html"><i class="fa-regular fa-arrow-left"></i></a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="blog-details.html">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                         <span class="page-link">2</span>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="blog-details.html">3</a></li>
+                      <li class="page-item">
+                         <a class="page-link" href="blog-details.html"><i class="fa-regular fa-arrow-right"></i></a>
+                      </li>
+                   </ul> {% endcomment %}
+                </nav>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="news-blog-right-wrapper pl-20">
+                <div class="blog-details__search-box mb-40">
+                   <h3>Search Here</h3>
+                   <div class="search-form p-relative">
+                      <form action="#">
+                         <input type="text" placeholder="search here">
+                         <button><i class="far fa-search"></i></button>
+                      </form>
+                   </div>
+                </div>
+                {% comment %} <div class="sidebar__widget mb-40">
+                   <h3 class="sidebar__widget-title">Categories</h3>
+                   <div class="sidebar__widget-content">
+                      <ul>
+                         <li><a href="donation-listing.html">Education <span>03</span></a></li>
+                         <li><a href="donation-listing.html">Hetalth care <span>07</span></a></li>
+                         <li><a href="donation-listing.html">Food and water <span>09</span></a></li>
+                         <li><a href="donation-listing.html">Chemistry <span>01</span></a></li>
+                         <li><a href="donation-listing.html">UI/UX Deisgn <span>00</span></a></li>
+                         <li><a href="donation-listing.html">Gemological <span>26</span></a></li>
+                      </ul>
+                   </div>
+                </div> {% endcomment %}
+                {% comment %} <div class="sidebar__widget sidebar-pages mb-40">
+                   <h3 class="sidebar__widget-title">Pages</h3>
+                   <div class="sidebar__widget-content">
+                      <ul>
+                         <li><a href="donation-listing.html">Web Design <i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                         <li><a href="donation-listing.html">Branding Design<i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                         <li><a href="donation-listing.html">Photography <i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                         <li><a href="donation-listing.html">Business Statergy <i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                         <li><a href="donation-listing.html">UI/UX Deisgn <i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                         <li><a href="donation-listing.html">Web Development<i
+                                  class="fa-regular fa-angle-right"></i></a></li>
+                      </ul>
+                   </div>
+                </div> {% endcomment %}
+                <div class="sidebar__widget mb-40">
+                   <h3 class="sidebar__widget-title">Recent Post</h3>
+                   <div class="sidebar__widget-content">
+                     {% if recent_posts %}
+
+                     {% for post in recent_posts %}
+                         <div class="sidebar__post">
+                             <div class="rc__post ">
+                             <div class="rc__post d-flex align-items-center">
+                                 <div class="rc__post-thumb">
+                                     <a href="{{ post.get_absolute_url }}"><img src="{{ post.banner.url }}"
+                                         alt=""></a>
+                                 </div>
+                                 <div class="rc__post-content">
+                                     <span>{{ post.publish }}</span>
+                                     <h3 class="rc__post-title">
+                                         <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                     </h3>
+                                 </div>
+                             </div>
+                             </div>
+                         </div>
+                     {% endfor %}
+                  
+                  {% endif %}
+                   </div>
+                </div>
+                {% comment %} <div class="sidebar__widget">
+                   <h3 class="sidebar__widget-title">Popular Tag</h3>
+                   <div class="sidbar__widget-content">
+                      <div class="side__tagcloud">
+                         <a href="donation-listing.html">landing </a>
+                         <a href="donation-listing.html">Charity</a>
+                         <a href="donation-listing.html">apps</a>
+                         <a href="donation-listing.html">Education </a>
+                         <a href="donation-listing.html">data</a>
+                         <a href="donation-listing.html">book</a>
+                         <a href="donation-listing.html">Design</a>
+                         <a href="donation-listing.html">website</a>
+                         <a href="donation-listing.html">landing page</a>
+                         <a href="donation-listing.html">data</a>
+                      </div>
+                   </div>
+                </div> {% endcomment %}
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+  
+  {% endif %}
+
+  <!-- Blog details area end -->
+
+</main>
+
+
+{% endblock content %}
+  
+{% comment %} Published {{ post.publish }} by {{ post.author }}
+{{ post.body|truncatewords:30|linebreaks }} 
+<a href="{{ post.get_absolute_url }}"> {{ post.title }} </a>
+{% include "pagination.html" with page=posts %} {% endcomment %}

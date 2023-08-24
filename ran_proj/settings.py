@@ -41,14 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
 
     # Third-party Apps
+    'cloudinary',
     "debug_toolbar",
     'widget_tweaks',
+    "ckeditor",
+    "ckeditor_uploader",
 
     # Local Apps
     "pages",
+    "blog",
 ]
 
 MIDDLEWARE = [
@@ -154,6 +159,23 @@ CSRF_TRUSTED_ORIGINS = ['https://redaid-nigeria.org']
 STATIC_DIR = os.path.join(BASE_DIR,"static")
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = "/media/"
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_SECRET_KEY')
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MEDIA_ROOT = [
+    BASE_DIR / "media"
+]
+
 
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 

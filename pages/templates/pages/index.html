@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+
+<style>
+
+  .tpblog__thumb img {
+    width: 100%%;
+    max-width: 626px;
+    height: 305px;
+    object-fit: cover
+  }
+
+  .tpblog__author img {
+    width: 100%%;
+    max-width: 36px;
+    height: 36px;
+    object-fit: cover
+  }
+
+</style>
+
+{% endblock head %}
+
 {% block content %}
 
 <main>
@@ -775,54 +798,36 @@
           </div>
         </div>
         <div class="row tp-gx-40">
-          <div class="col-xl-6 col-lg-6">
-            <div class="tpblog mt-30 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-              <div class="tpblog__thumb">
-                <a href="blog-details.html"><img class="grayscale" src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754846/website/assets/img/blog/blog-7_dnyvse.png" loading="lazy" alt="" /></a>
-                <a href="blog-details.html"><span>Health</span></a>
-              </div>
-              <div class="tpblog__content">
-                <h3 class="tpblog__title"><a href="blog-details.html">Why you should join as a volunteer with us -
-                    2022</a></h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in some form</p>
-                <div class="tpblog__details d-flex justify-content-md-between align-items-center flex-wrap">
-                  <div class="tpblog__author">
-                    <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754876/website/assets/img/blog/blog-auther_lcbtja.png" loading="lazy" alt="" />
-                    <span>Rasalina Halim</span>
-                  </div>
-                  <div class="tpblog__comments align-items-center">
-                    <span>356<i class="fa-regular fa-heart"></i></span>
-                    <span>12.January.2022<i class="fa-regular fa-clock"></i></span>
+          {% if not posts %}
+            <p>There are currently no blog articles to display</p>
+          {% else %}
+            {% for post in posts %}
+            <div class="col-xl-6 col-lg-6">
+              <div class="tpblog mt-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                <div class="tpblog__thumb">
+                  <a href="{{ post.get_absolute_url }}"><img class="grayscale" src="{{ post.banner.url }}" loading="lazy" alt="" /></a>
+                  <a href="{{ post.get_absolute_url }}"><span>Read More</span></a>
+                </div>
+                <div class="tpblog__content">
+                  <h3 class="tpblog__title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                  </h3>
+                  {{ post.body|striptags|truncatewords:30|linebreaks }}
+                  <div class="tpblog__details d-flex justify-content-md-between align-items-center flex-wrap">
+                    <div class="tpblog__author">
+                      <img src="{{ post.banner.url }}" loading="lazy" alt="" />
+                      <span>{{ post.author }}</span>
+                    </div>
+                    <div class="tpblog__comments align-items-center">
+                      {% comment %} <span>356<i class="fa-regular fa-heart"></i></span> {% endcomment %}
+                      <span>{{ post.publish }}<i class="fa-regular fa-clock"></i></span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xl-6 col-lg-6">
-            <div class="tpblog mt-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-              <div class="tpblog__thumb">
-                <a href="blog-details.html"><img class="grayscale" src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754847/website/assets/img/blog/blog-8_gqs117.png" loading="lazy" alt="" /></a>
-                <a href="blog-details.html"><span>Donation</span></a>
-              </div>
-              <div class="tpblog__content">
-                <h3 class="tpblog__title"><a href="blog-details.html">Take Your Online Donation to the Next Level!</a>
-                </h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in some form</p>
-                <div class="tpblog__details d-flex justify-content-md-between align-items-center flex-wrap">
-                  <div class="tpblog__author">
-                    <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754847/website/assets/img/blog/blog-auther-2_ubxhuf.png" loading="lazy" alt="" />
-                    <span>Hallen Alinar</span>
-                  </div>
-                  <div class="tpblog__comments align-items-center">
-                    <span>356<i class="fa-regular fa-heart"></i></span>
-                    <span>12.January.2022<i class="fa-regular fa-clock"></i></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     </section>

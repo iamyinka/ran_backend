@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Partner, Network, Donation
+from blog.models import Post
 from .forms import ContactForm
 
 def index(request):
-    return render(request, "pages/index.html")
+    posts = Post.published.all()[0:2]
+    return render(request, "pages/index.html", {"posts": posts})
 
 def vision_and_mission(request):
     return render(request, "pages/vision-and-mission.html")
@@ -59,6 +61,12 @@ def publications(request):
 
 def management_team(request):
     return render(request, "pages/management-team.html")
+
+def child_safeguarding(request):
+    return render(request, "pages/child-safeguarding.html")
+
+def gender_policy(request):
+    return render(request, "pages/gender-policy.html")
 
 def donation(request):
     if request.method == "POST":
