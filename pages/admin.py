@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Partner, Network, Contact, Donation
+from .models import Partner, Network, Contact, Donation, Affiliate
 
 admin.site.register(Partner)
 admin.site.register(Network)
+admin.site.register(Affiliate)
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):

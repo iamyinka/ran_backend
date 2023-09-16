@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Partner, Network, Donation
+from .models import Partner, Network, Donation, Affiliate
 from blog.models import Post
 from .forms import ContactForm
 
@@ -23,9 +23,11 @@ def article_of_association(request):
 def partners_and_networks(request):
     partners = Partner.objects.all()
     networks = Network.objects.all()
+    affiliates = Affiliate.objects.all()
     context = {
         'partners': partners,
-        "networks": networks
+        "networks": networks,
+        'affiliates': affiliates,
     }
     return render(request, "pages/partners-and-networks.html", context)
 

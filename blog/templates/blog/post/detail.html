@@ -6,6 +6,23 @@
 
 {% endblock title %}
 
+{% block head %}
+
+<style>
+   .blog-details-thumb img {
+      width: 843px;
+      height: 438px;
+      object-fit: cover;
+   }
+
+   .rc__post-thumb img {
+      width: 97px;
+      height: 78px;
+      object-fit: cover;
+   }
+</style>
+
+{% endblock head %}
 {% block content %}
 
 <main>
@@ -36,7 +53,7 @@
              <div class="col-lg-8">
                 <div class="blog-details-items">
                    <div class="blog-details-thumb">
-                      <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754923/website/assets/img/blog/blog-details/blog-thumb_eo44zi.png" alt="">
+                      <img src="{{ post.banner.url }}" alt="">
                    </div>
                    <div class="blog-details-info d-flex">
                       <div class="blog-details-name">
@@ -266,7 +283,7 @@
                                     <div class="rc__post ">
                                     <div class="rc__post d-flex align-items-center">
                                         <div class="rc__post-thumb">
-                                            <a href="{{ post.get_absolute_url }}"><img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754926/website/assets/img/blog/blog-details/rc-1_dajsvz.png"
+                                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.banner.url }}"
                                                 alt=""></a>
                                         </div>
                                         <div class="rc__post-content">

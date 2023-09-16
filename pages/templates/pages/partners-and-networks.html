@@ -74,10 +74,30 @@ Partners &amp; Networks
                                 </p>
                             </div>
 
+                            <div class="blog-details-content blog-details-no-secret">
+                                <h3 class="details-title">Affiliate Organizations:</h3>
+                                <ul id="partners">
+                                    
+                                    {% if affiliates %}
+                                        {% for affiliate in affiliates %}
+                                        <li>
+                                            <a href="{% if affiliate.url %} {{ affiliate.url }} {% else %} # {% endif %}" target="_blank">
+                                                <span>
+                                                    <i class="fas fa-check"></i>
+                                                </span>{{ affiliate.name }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    {% else %}
+                                        No Affiliate(s) in the database
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+
                             <div class="blog-details-content">
                                 <h3 class="details-title">Partners</h3>
                                 <p>
-                                    Our work is supported and funded largely by DAHW (German)* and other institutions
+                                    Our work is supported and funded largely by DAHW German and other institutions
                                     donors.
                                 </p>
                                 <p>
