@@ -8242,7 +8242,8 @@ input[type="color"] {
   font-family: "Font Awesome 5 Pro";
   background-image: none;
   top: 40px;
-  right: 45px;
+  /* right: 45px; */
+  right: 20px;
   width: auto;
   height: auto;
   font-weight: 400;

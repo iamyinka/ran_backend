@@ -8,7 +8,7 @@ from .forms import EmailPostForm
 def post_list(request):
     posts_list = Post.published.all()
     recent_posts = Post.published.all()[0:4]
-    paginator = Paginator(posts_list, 2)
+    paginator = Paginator(posts_list, 6)
     page_number = request.GET.get('page', 1)
     try:
         posts = paginator.page(page_number)
