@@ -3599,6 +3599,7 @@ input[type="color"] {
   background: #161719;
   z-index: -1;
 }
+
 @media (max-width: 575px) {
   .breadcrumb-bg {
     height: 600px;
@@ -7195,6 +7196,10 @@ input[type="color"] {
   font-size: 15px;
   color: #0d0d0d;
   margin-left: 5px;
+}
+
+.blog-details-thumb {
+  max-width: 100%;
 }
 
 .blog-details-thumb img {
