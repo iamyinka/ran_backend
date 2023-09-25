@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import Partner, Network, Contact, Donation, Affiliate
+from .models import Partner, Network, Contact, Donation, Affiliate, Photo
 
 admin.site.register(Partner)
 admin.site.register(Network)
 admin.site.register(Affiliate)
+admin.site.register(Photo)
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):

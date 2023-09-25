@@ -1,12 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Partner, Network, Donation, Affiliate
+from .models import Partner, Network, Donation, Affiliate, Photo
 from blog.models import Post
 from .forms import ContactForm
 
 def index(request):
     posts = Post.published.all()[0:2]
     return render(request, "pages/index.html", {"posts": posts})
+
+def gallery(request):
+    photos = Photo.objects.all()
+    context = {
+        'photos': photos
+    }
+    return render(request, "pages/gallery.html", context)
 
 def vision_and_mission(request):
     return render(request, "pages/vision-and-mission.html")

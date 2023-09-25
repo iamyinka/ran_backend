@@ -23,4 +23,5 @@ urlpatterns = [
     path('gender-policy/', views.gender_policy, name='gender_policy'),
     path('donate/', views.donation, name='donation'),
     path('contact-us/', views.contact_us, name='contact_us'),
+    path('photo-gallery/', views.gallery, name='gallery'),
 ]

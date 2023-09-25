@@ -66,3 +66,9 @@ class Donation(models.Model):
 
     def __str__(self):
         return self.sender
+    
+class Photo(models.Model):
+    image = models.ImageField(upload_to='gallery/')
+
+    def __str__(self):
+        return self.image.url

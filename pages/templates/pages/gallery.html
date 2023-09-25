@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% block title %}
+
+Photo Gallery
+
+{% endblock title %}
+
+{% block head %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.5/dist/fancybox.css">
+
+<style>
+    .vrmedia-gallery {
+        max-width: 567px;
+        margin: 5rem auto;
+        background: white;
+        padding: 20px;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        border-radius: 8px;
+        backdrop-filter: opacity(0.5);
+      }
+      .vrmedia-gallery img {
+        object-fit: cover;
+        width: 100%;
+      }
+      .vrmedia-gallery .lSGallery {
+        display: inline-flex;
+      }
+      .vrmedia-gallery .lSGallery li {
+        border-radius: 12px !important;
+      }
+      .vrmedia-gallery .lSGallery li.active {
+        border: 1px solid #242423;
+      }
+
+      {% comment %} li[data-fancybox="gallery"] {
+        position: relative;
+      } {% endcomment %}
+</style>
+
+{% endblock head %}
+
+{% block content %}
+    <main>
+        <!-- Blog details breadcrumb start -->
+        <div class="wrapper-box p-relative">
+            <div class="breadcrumb-bg" data-background="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754700/website/assets/img/breadcrumb/breadcrumb-bg_bwimw6.png"></div>
+            <div class="breadcrumb-area pt-265 pb-265">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb__content text-center">
+                                <h1 class="breadcrumb__title">Photo Gallery</h1>
+                                <!-- <div class="breadcrumb__list">
+                                    <span class="underline"><a href="tuberculosis.html">Tuberculosis</a></span>
+                                    <span class="dvdr"><i class="fa-solid fa-colon"></i></span>
+                                    <span class="underline"><a href="buruli-ulcer.html">Buruli Ulcer</a></span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog details breadcrumb end -->
+
+        <!-- Blog details area start -->
+        <div class="blog-details-area pt-100 pb-130">
+            <div id="gallery" class="container">
+                <div class="row">
+                    
+                    <div class="vrmedia-gallery">
+                        <ul class="ecommerce-gallery">
+                          {% for photo in photos %}
+                          
+                            <li data-fancybox="gallery" data-src="{{ photo.image.url }}" data-thumb="{{ photo.image.url }}" data-src="{{ photo.image.url }}"> 
+                                <img src="{{ photo.image.url }}" width="567">
+                            </li>
+                          
+                          {% endfor %}
+                          
+                          {% comment %} <li data-fancybox="gallery" data-src="https://via.placeholder.com/1000/89b0ae/FFFFFF/?text=VRMedia%20Dev" data-thumb="https://via.placeholder.com/567/89b0ae/FFFFFF/?text=VRMedia%20Dev" data-src="https://via.placeholder.com/567/89b0ae/FFFFFF/?text=VRMedia%20Dev"> <img src="https://via.placeholder.com/567/89b0ae/FFFFFF/?text=VRMedia%20Dev"></li> {% endcomment %}
+                        </ul>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Blog details area end -->
+    </main>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.5/dist/fancybox.umd.js"></script>
+
+<script>
+    
+    jQuery(document).ready(function () {
+        jQuery(".ecommerce-gallery").lightSlider({
+          gallery: true,
+          item: 1,
+          loop: true,
+          thumbItem: 4,
+          thumbMargin: 10
+        });
+      });
+      
+    
+</script>
+
+{% endblock scripts %}
