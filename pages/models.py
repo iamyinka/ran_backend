@@ -69,6 +69,11 @@ class Donation(models.Model):
     
 class Photo(models.Model):
     image = models.ImageField(upload_to='gallery/')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ("-created",)
 
     def __str__(self):
         return self.image.url
