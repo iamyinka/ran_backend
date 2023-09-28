@@ -8,21 +8,7 @@ import requests
 def index(request):
     # posts = Post.published.all()[0:2]
     posts = requests.get("https://weblog.redaid-nigeria.org/wp-json/wp/v2/posts").json()[0:2]
-
-    post_imgs = []
-
-    # for post in posts:
-    #     get_post = requests.get(f"https://weblog.redaid-nigeria.org/wp-json/wp/v2/media?parent={post['id']}").json()[0:1]
-    #     post_imgs.append(get_post[0]['guid']['rendered'])
-
-    # print(post_imgs)
-
-    # post_img = requests.get(f"https://weblog.redaid-nigeria.org/wp-json/wp/v2/media?parent={posts[0]['id']}").json()[0:1]
-    # post = post_img['guid']
-    # print(post_img[0]['guid']['rendered'])
-    # print(post['guid']['rendered'])
-    # posts_img = [img for img in ]
-    return render(request, "pages/index.html", {"posts": posts, 'post_imgs': post_imgs})
+    return render(request, "pages/index.html", {"posts": posts})
 
 def gallery(request):
     photos = Photo.objects.all()
@@ -32,7 +18,8 @@ def gallery(request):
     return render(request, "pages/gallery.html", context)
 
 def vision_and_mission(request):
-    return render(request, "pages/vision-and-mission.html")
+    posts = requests.get("https://weblog.redaid-nigeria.org/wp-json/wp/v2/posts").json()[0:2]
+    return render(request, "pages/vision-and-mission.html", {"posts": posts})
 
 def organizational_chart(request):
     return render(request, "pages/organizational-chart.html")
