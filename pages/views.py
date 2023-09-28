@@ -3,10 +3,26 @@ from django.contrib import messages
 from .models import Partner, Network, Donation, Affiliate, Photo
 from blog.models import Post
 from .forms import ContactForm
+import requests
 
 def index(request):
-    posts = Post.published.all()[0:2]
-    return render(request, "pages/index.html", {"posts": posts})
+    # posts = Post.published.all()[0:2]
+    posts = requests.get("https://weblog.redaid-nigeria.org/wp-json/wp/v2/posts").json()[0:2]
+
+    post_imgs = []
+
+    # for post in posts:
+    #     get_post = requests.get(f"https://weblog.redaid-nigeria.org/wp-json/wp/v2/media?parent={post['id']}").json()[0:1]
+    #     post_imgs.append(get_post[0]['guid']['rendered'])
+
+    # print(post_imgs)
+
+    # post_img = requests.get(f"https://weblog.redaid-nigeria.org/wp-json/wp/v2/media?parent={posts[0]['id']}").json()[0:1]
+    # post = post_img['guid']
+    # print(post_img[0]['guid']['rendered'])
+    # print(post['guid']['rendered'])
+    # posts_img = [img for img in ]
+    return render(request, "pages/index.html", {"posts": posts, 'post_imgs': post_imgs})
 
 def gallery(request):
     photos = Photo.objects.all()
