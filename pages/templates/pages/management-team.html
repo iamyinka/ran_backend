@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
 Management Team
 {% endblock title %}
@@ -37,7 +37,8 @@ Management Team
             <div class="our-volunteers-box p-relative mt-30">
               <div class="team__wrapper bg-white">
                 <div class="team__img">
-                  <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754731/website/assets/img/mgmt/Charles_xjkpbj.jpg" loading="lazy" alt="" />
+                  {% comment %} <img src="https://res.cloudinary.com/dav4wpgc9/image/upload/v1691754731/website/assets/img/mgmt/Charles_xjkpbj.jpg" loading="lazy" alt="" /> {% endcomment %}
+                  <img src="{% static "assets/new-ceo.jpeg" %}" loading="lazy" alt="" />
                 </div>
                 <div class="team-social text-center">
                   <a href="#" target="_blank">
@@ -67,8 +68,8 @@ Management Team
                   </a>
                 </div>
                 <div class="team__authur">
-                  <span class="team__title"><a href="#">Dr Charles Nwafor</a></span>
-                  <p>Ag. CEO</p>
+                  <span class="team__title"><a href="#">Dr. Daniel Egbule</a></span>
+                  <p>CEO</p>
                 </div>
               </div>
             </div>
