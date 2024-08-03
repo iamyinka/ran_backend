@@ -142,7 +142,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-CSRF_TRUSTED_ORIGINS = ['https://redaid-nigeria.org']
+CSRF_TRUSTED_ORIGINS = ['https://redaid-nigeria.org', "https://redaidnigeria.org"]
 # CSRF_TRUSTED_ORIGINS=['redaid-nigeria.org', 'www.redaid-nigeria.org']
 # INTERNAL_IPS = [
 #     # ...
