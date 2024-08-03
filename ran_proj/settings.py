@@ -30,7 +30,7 @@ DEBUG = os.environ.get('DEBUG') == "True"
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ["redaid-nigeria.org", "www.redaid-nigeria.org", "redaidnigeria.org", "www.redaidnigeria.org"]
+    ALLOWED_HOSTS = ["92.205.190.133", "redaid-nigeria.org", "www.redaid-nigeria.org", "redaidnigeria.org", "www.redaidnigeria.org"]
 
 
 # Application definition
