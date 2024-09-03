@@ -7,7 +7,7 @@ import requests
 
 def index(request):
     # posts = Post.published.all()[0:2]
-    posts = requests.get("https://weblog.redaid-nigeria.org/wp-json/wp/v2/posts").json()[0:2]
+    posts = requests.get("https://weblog.redaidnigeria.org/wp-json/wp/v2/posts").json()[0:2]
     return render(request, "pages/index.html", {"posts": posts})
 
 def gallery(request):
@@ -18,7 +18,7 @@ def gallery(request):
     return render(request, "pages/gallery.html", context)
 
 def vision_and_mission(request):
-    posts = requests.get("https://weblog.redaid-nigeria.org/wp-json/wp/v2/posts").json()[0:2]
+    posts = requests.get("https://weblog.redaidnigeria.org/wp-json/wp/v2/posts").json()[0:2]
     return render(request, "pages/vision-and-mission.html", {"posts": posts})
 
 def organizational_chart(request):
